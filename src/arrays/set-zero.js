@@ -8,37 +8,32 @@ module.exports = {
 
 	/**
 	 * Set zero in rows and columns with zero item
-	 * @param {Array<number>} matrix
-	 * @returns {Array<number>}
+   * @param {Array}
+   * @returns {Array}
 	 */
 	setZero: function (matrix) {
-		var m = matrix.length,
-			n = (m > 0) ? matrix[0].length : 0;
-		if (!m || !n) {
-			return matrix;
-		}
-
-		var row = {},
-			column = {},
-			i, j;
-
-		for (i = 0; i < m; i++) {
-			for (j = 0; j < n; j++) {
-				if (matrix[i][j] === 0) {
-					row[i] = true;
-					column[j] = true;
-				}
-			}
-		}
-
-		for (i = 0; i < m; i++) {
-			for (j = 0; j < n; j++) {
-				if (row[i] || column[j]) {
-					matrix[i][j] = 0;
-				}
-			}
-		}
-
+    var rows = [];
+    var cols = [];
+    var i, ii;
+    var len = matrix.length;
+    for (i=0; i<len; i++) {
+      for (ii=0; ii<len; ii++) {
+        if (matrix[i][ii] === 0) {
+          rows.push(i);
+          cols.push(ii);
+        }
+      }
+    }
+    for (i=0; i<len; i++) {
+      for (ii=0; ii<len; ii++) {
+        if (rows.indexOf(i) >= 0) {
+          matrix[i][ii] = 0;
+        }
+        if (cols.indexOf(ii) >= 0) {
+          matrix[i][ii] = 0;
+        }
+      }
+    }
 		return matrix;
 	}
 };
