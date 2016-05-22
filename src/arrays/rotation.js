@@ -16,12 +16,12 @@ module.exports = {
 	rotateMatrix: function (matrix) {
     var newMatrix = [];
     var len = matrix.length - 1;
-    for (var i=len; i>=0; i--) {
-      for (var ii=0; ii<len; ii++) {
-        var row = [];
-        row.push(matrix[i][ii]);
-        newMatrix.push(row);
+    for (var i=0; i<=len; i++) {
+      var row = [];
+      for (var ii=0; ii<=len; ii++) {
+        row.unshift(matrix[ii][i]);
       }
+      newMatrix.push(row);
     }
     return newMatrix;
 	}
