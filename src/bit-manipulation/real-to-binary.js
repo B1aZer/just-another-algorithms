@@ -37,8 +37,6 @@ module.exports = {
         bin[i] = 1;
       }
     };
-    var minTwo = calcMinTwo(number);
-    var binary = makeBinFromArr(minTwo);
-    return binary;
+    return null;
 	}
 };
