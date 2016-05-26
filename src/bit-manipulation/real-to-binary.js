@@ -18,15 +18,15 @@ module.exports = {
     if (!isNumber(number)) {
       return null;
     }
-    var calcMinTwo = function(num) {
-      var pr = 0;
-      var pow = 1;
+    var baseTwo = function(num) {
+      var pr = 1;
+      var pow = 0;
       var fnd = 2;
       while (pr <= num) {
-        pr *= pr;
+        pr *= fnd;
         pow += 1;
       }
-      return pow;
+      return (pow <= 0) ? pow : pow - 1;
     };
     var makeBinFromArr = function(arr) {
       if (!arr || arr.length !== 2) {
@@ -37,6 +37,6 @@ module.exports = {
         bin[i] = 1;
       }
     };
-    return null;
+    return baseTwo(number);
 	}
 };
