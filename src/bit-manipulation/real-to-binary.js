@@ -18,7 +18,9 @@ module.exports = {
     if (!isNumber(number)) {
       return null;
     }
+    var test = new Array(7);
     var baseTwo = function(num) {
+      console.info(num);
       var pr = 1;
       var pow = 0;
       var fnd = 2;
@@ -26,7 +28,8 @@ module.exports = {
         pr *= fnd;
         pow += 1;
       }
-      return (pow <= 0) ? pow : pow - 1;
+      var res = (pow <= 0) ? 0 : baseTwo(pow - 1);
+      return res;
     };
     var makeBinFromArr = function(arr) {
       if (!arr || arr.length !== 2) {
