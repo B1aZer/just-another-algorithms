@@ -20,7 +20,6 @@ module.exports = {
     }
     var test = new Array(7);
     var baseTwo = function(num) {
-      console.info(num);
       var pr = 1;
       var pow = 0;
       var fnd = 2;
@@ -28,7 +27,7 @@ module.exports = {
         pr *= fnd;
         pow += 1;
       }
-      var res = (pow <= 0) ? 0 : baseTwo(pow - 1);
+      var res = (pow <= 0) ? 0 : pow - 1;
       return res;
     };
     var makeBinFromArr = function(arr) {
@@ -40,6 +39,12 @@ module.exports = {
         bin[i] = 1;
       }
     };
-    return baseTwo(number);
+    var res = number;
+    while (res > 0) {
+      console.info(res);
+      res = baseTwo(res);
+      console.log(res);
+    }
+    return null;
 	}
 };
