@@ -41,9 +41,7 @@ module.exports = {
     };
     var res = number;
     while (res > 0) {
-      console.info(res);
       res = baseTwo(res);
-      console.log(res);
     }
     return null;
 	}
