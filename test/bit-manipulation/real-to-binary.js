@@ -6,8 +6,8 @@ var solver = require('../../src/bit-manipulation/real-to-binary'),
 describe('Bit manipulation', function () {
 	describe('Print binary', function () {
 		it('should print bits', function () {
-			assert.equal(solver.printBinary(9), '10');
-			assert.equal(solver.printBinary(0.72), '0.1011101');
+			assert.equal(solver.printBinary(9), '1001');
+			assert.equal(solver.printBinary(110), '1101110');
 		});
 	});
 });
